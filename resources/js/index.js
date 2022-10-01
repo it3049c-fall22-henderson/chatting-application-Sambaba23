@@ -101,3 +101,16 @@ sendButton.addEventListener("click", function(sendButtonClickEvent) {
   sendMessages(sender,message);
   myMessage.value = "";
 });
+
+save.onclick = function () {
+  localStorage.setItem("my-name-input", nameInput.value);
+  nameInput.value = "";
+  document.getElementById("my-message").disabled = false;
+}
+
+edit.onclick = function () {
+  const text = localStorage.getItem("my-name-input")
+  nameInput.value = text;
+}
+
+
